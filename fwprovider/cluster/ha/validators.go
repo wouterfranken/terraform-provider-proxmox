@@ -27,3 +27,13 @@ func resourceStateValidator() validator.String {
 func resourceTypeValidator() validator.String {
 	return validators.NewParseValidator(types.ParseHAResourceType, "value must be a valid HA resource type")
 }
+
+// ruleTypeValidator returns a new HA rule type validator.
+func ruleTypeValidator() validator.String {
+	return validators.NewParseValidator(types.ParseHARuleType, "value must be a valid HA rule type")
+}
+
+// ruleAffinityValidator returns a new HA rule affinity validator.
+func ruleAffinityValidator() validator.String {
+	return validators.NewParseValidator(types.ParseHARuleAffinity, "value must be a valid HA rule affinity")
+}
